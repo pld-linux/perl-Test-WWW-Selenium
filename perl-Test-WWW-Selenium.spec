@@ -4,7 +4,6 @@
 #
 %define		pdir	Test
 %define		pnam	WWW-Selenium
-%include	/usr/lib/rpm/macros.perl
 Summary:	Test::WWW::Selenium - Test applications using Selenium Remote Control
 Name:		perl-Test-WWW-Selenium
 Version:	1.25
