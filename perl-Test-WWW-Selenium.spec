@@ -6,13 +6,13 @@
 %define		pnam	WWW-Selenium
 Summary:	Test::WWW::Selenium - Test applications using Selenium Remote Control
 Name:		perl-Test-WWW-Selenium
-Version:	1.25
-Release:	2
+Version:	1.36
+Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Test/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e1dc1e8ee1cf83ad188f38604d1ad95b
-URL:		http://search.cpan.org/dist/Test-WWW-Selenium/
+Source0:	https://www.cpan.org/modules/by-module/Test/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	e887ee508f1779d3ff5b921974db3d1e
+URL:		https://metacpan.org/dist/Test-WWW-Selenium
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -53,6 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# Devel::REPL plugin: would pull Devel::REPL and Moose into every test user
+rm -r $RPM_BUILD_ROOT%{perl_vendorlib}/Devel
 
 %clean
 rm -rf $RPM_BUILD_ROOT
